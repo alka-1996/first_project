@@ -38,25 +38,4 @@
 }
 
 
-ul {display: inline-block;
-  margin: 0px;
-  list-style-type: none;}
 
-  form {    float: right;}
-
-  li { float: left; margin-left: 19px;
-    
-}
-a { text-decoration: none;}
-
-a.navbar-brand {float: left; }
-
-textarea.form-control{width:80%;     border: 4px solid #03a9f459;}
-div .container {    margin-left: 269px;
-}
-
-button.btn-btn-primary{background: #1406f3;
-    color: white; margin: 5px; 
-}
-
-.dark-mode-btn {margin-left: -280px;}
