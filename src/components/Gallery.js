@@ -1,19 +1,19 @@
 import React from 'react'
 
-export default function Gallary() {
+export default function Gallery() {
     return (
         <>
-            <div className='container' style={{ backgroundColor: "#f3eeeeb0" }}>
+            <div className='container' style={{ backgroundColor: "#f3eeeeb0",height:"850px"}}>
                 <div h2 className="my-3">
                     <div style={{ display: 'flex', justifyContent: 'space-between',paddingTop:' 35px'}}>
-                        <div><h2>Gallary</h2></div>
-                        <div><button type="button" className="btn btn-success" style={{marginRight:'18px'}}>Add Image</button></div>
+                        <div><h2>Gallery</h2></div>
+                        <div><a href="/images"><button type="button" className="btn btn-success" style={{marginRight:'18px'}}>Add Image</button></a></div>
                     </div>
                     <div className="btn-group" style={{ display: 'flex', marginLeft: '82%'}}>
 
-                        <div><i className="fa fa-th" style={{ color: '#2525df', border: "1px solid black",padding:'12px' }}>Grid View</i></div>
+                        <div> <a href="/gallery"><i className="fa fa-th" style={{ color: '#2525df', border: "1px solid black",padding:'12px' }}>Grid View</i></a></div>
 
-                        <div><i className="fa fa-list" style={{ border: "1px solid black",color:'gray',padding:'12px'}}>List View</i></div>
+                        <div><a href="/materialUI"><i className="fa fa-list" style={{ border: "1px solid black",color:'gray',padding:'12px'}}>List View</i></a></div>
                     </div>
                 </div>
 

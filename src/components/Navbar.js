@@ -19,9 +19,29 @@ export default function  Navbar(props) {
         <Link className="nav-link" to="/about">About{props.aboutText}</Link>
       </li>
       <li className="nav-item">
-        <Link className="nav-link active" aria-current="page"to="/gallary">Gallary</Link>
+        <Link className="nav-link active" aria-current="page"to="/gallery">Gallery</Link>
       </li>
-    
+      <li className="nav-item">
+        <Link className="nav-link active" aria-current="page"to="/list">List</Link>
+      </li>
+      <li className="nav-item">
+        <Link className="nav-link active" aria-current="page"to="/materialUI">MaterialUI</Link>
+      </li>
+      <li className="nav-item">
+        <Link className="nav-link active" aria-current="page"to="/images">Images</Link>
+      </li>
+      <li className="nav-item">
+        <Link className="nav-link active" aria-current="page"to="/template">Template</Link>
+      </li>
+      <li className="nav-item">
+        <Link className="nav-link active" aria-current="page"to="/steps">Steps</Link>
+      </li>
+      <li className="nav-item">
+        <Link className="nav-link active" aria-current="page"to="/dateTime">Date & Time</Link>
+      </li>
+      <li className="nav-item">
+        <Link className="nav-link active" aria-current="page"to="/Times">Times</Link>
+      </li>
     </ul>
     <div className="d-flex">
       <div className="bg-primary rounded mx-2" onClick={()=>{props.toggleMode ('primary')}} style={{ height:'30px', width:'30px',cursor:'pointer'}}></div>
