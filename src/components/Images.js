@@ -1,6 +1,11 @@
 import React from 'react'
+import List from './List';
 
 export default function Images() {
+
+    const handleClick = () => {
+        console.log("Alka Button clicked in parent component");
+        };
     return (
         <>
             <div className='container' style={{ backgroundColor: "#f3eeeeb0" ,height:"800px"}}>
@@ -24,6 +29,8 @@ export default function Images() {
                 
             </div>
             </div>
+            <List message="Hello from parent" handleClick={handleClick} />
+
         </>
     )
 }

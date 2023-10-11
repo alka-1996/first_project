@@ -1,7 +1,8 @@
-import React from 'react'
+import React,{useState} from 'react'
 import {Link } from 'react-router-dom'
 
 export default function  Navbar(props) { 
+  const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('token') ? true : false);
   return (
     
 <nav className={`navbar navbar-expand-lg  navbar-${props.mode} bg-${props.mode}`}>
@@ -18,12 +19,17 @@ export default function  Navbar(props) {
       <li className="nav-item">
         <Link className="nav-link" to="/about">About{props.aboutText}</Link>
       </li>
+      {localStorage.getItem('token') ?   // speific Routing 
+      <>
       <li className="nav-item">
         <Link className="nav-link active" aria-current="page"to="/gallery">Gallery</Link>
       </li>
       <li className="nav-item">
         <Link className="nav-link active" aria-current="page"to="/list">List</Link>
       </li>
+      </>
+      :
+      <></>}
       <li className="nav-item">
         <Link className="nav-link active" aria-current="page"to="/materialUI">MaterialUI</Link>
       </li>
@@ -42,6 +48,37 @@ export default function  Navbar(props) {
       <li className="nav-item">
         <Link className="nav-link active" aria-current="page"to="/Times">Times</Link>
       </li>
+      <li className="nav-item">
+        <Link className="nav-link active" aria-current="page"to="/ReactTable">ReactTable</Link>
+      </li>
+      <li className="nav-item">
+        <Link className="nav-link active" aria-current="page"to="/Counter">Counter</Link>
+      </li>
+      <li className="nav-item">
+        <Link className="nav-link active" aria-current="page"to="/Account">Account</Link>
+      </li>
+      <li className="nav-item">
+        <Link className="nav-link active" aria-current="page"to="/Documents">Documents</Link>
+      </li>
+      <li className="nav-item">
+        <Link className="nav-link active" aria-current="page"to="/Table">Table</Link>
+      </li>
+      <li className="nav-item">
+        {isLoggedIn ?
+        <div onClick={()=> {
+          localStorage.removeItem('token');
+          setIsLoggedIn(false);
+          window.location.reload();
+        }}>Logout</div>
+        :
+        <Link className="nav-link active" aria-current="page"to="/Login">Login</Link>
+        }
+        
+      </li>
+      <li className="nav-item">
+        <Link className="nav-link active" aria-current="page"to="/ImageBar">ImageBar</Link>
+      </li>
+      
     </ul>
     <div className="d-flex">
       <div className="bg-primary rounded mx-2" onClick={()=>{props.toggleMode ('primary')}} style={{ height:'30px', width:'30px',cursor:'pointer'}}></div>

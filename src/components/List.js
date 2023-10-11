@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function List() {
+export default function List(props) {
     return (
         <>
             <div className='container' style={{ backgroundColor: "#f3eeeeb0" ,height:"700px"}}>
@@ -143,6 +143,9 @@ export default function List() {
                     </ul>
                 </div>
             </div> */}
+
+<button onClick={props.handleClick}> { props.message ? props.message : 'click here'}</button>
+
         </div >
         </>
     )

@@ -16,6 +16,16 @@ import PaymentLocation from './components/PaymentLocation';
 import BillingAddress from './components/BillingAddress';
 import DateTime from './components/DateTime';
 import Times from './components/Times';
+import ReactTable from './components/ReactTable';
+import Counter from './components/Counter';
+import Account from './components/Account';
+import Documents from './components/Documents';
+import Table from './components/Table';
+import Login from './components/Login';
+import NoAccess from './components/NoAccess';
+import ImageBar from './components/ImageBar';
+
+
 
 function App() {
   const [mode, setMode] = useState('light'); //whether dark mode is enalbed or not
@@ -60,8 +70,9 @@ return (
    <Alert alert={alert} ></Alert>
     <Routes>
       <Route exact path="/about" element={<About mode={mode}/>}/>
-      <Route exact path="/gallery" element={<Gallery/>}/>
-      <Route exact path="/list" element={<List/>}/>
+      //speific Routing
+      <Route exact path="/gallery" element={localStorage.getItem('token') ? <Gallery/> : <NoAccess/>}/>  
+      <Route exact path="/list" element={ localStorage.getItem('token') ? <List/> : <NoAccess/>}/>
       <Route exact path="/materialUI" element={<MaterialUI/>}/>
       <Route exact path="/images" element={<Images/>}/>
       <Route exact path="/template" element={<Template/>}/>
@@ -70,6 +81,18 @@ return (
       <Route exact path="/BillingAddress" element={<BillingAddress/>}/>
       <Route exact path="/DateTime" element={<DateTime/>}/>
       <Route exact path="/Times" element={<Times/>}/>
+      <Route exact path="/ReactTable" element={<ReactTable/>}/>
+      <Route exact path="/Counter" element={<Counter/>} />
+      <Route exact path="/Account" element={<Account/>} />
+      <Route exact path="/documents" element={<Documents/>} />
+      <Route exact path="/Table" element={<Table/>} />
+      <Route exact path="/Login" element={<Login/>} />
+      <Route exact path="/ImageBar" element={<ImageBar/>} />
+
+
+
+
+
 
 
       <Route  exact path="/" element={<Textform showAlert={showAlert} heading="Try TextUtils-Word Counter, Character Counter ,Remove extra spaces" mode={mode}/>}/>
